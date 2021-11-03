@@ -33,7 +33,7 @@ public class RabbitmqHelloWorldFunctionalProgrammingApplication {
     }
 
     @StreamListener(TaskBinding.TASK_CHANNEL_INPUT)
-    public void processTaskChannel(String msg) {
+    public void consumeTask(String msg) {
         System.out.println("consumed task: " + msg);
     }
 }
