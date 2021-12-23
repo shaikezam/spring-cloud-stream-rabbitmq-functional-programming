@@ -7,9 +7,7 @@ public class Task {
     private String id;
     private String title;
     private String description;
-
-    public Task() {
-    }
+    private Status taskStatus;
 
     public Task(String id, String title, String description) {
         this.id = id;
@@ -41,12 +39,21 @@ public class Task {
         this.description = description;
     }
 
+    public Status getTaskStatus() {
+        return taskStatus;
+    }
+
+    public void setTaskStatus(Status taskStatus) {
+        this.taskStatus = taskStatus;
+    }
+
     @Override
     public String toString() {
         return "Task{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
+                ", taskStatus=" + taskStatus +
                 '}';
     }
 

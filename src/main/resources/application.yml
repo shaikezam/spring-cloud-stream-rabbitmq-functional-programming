@@ -1,0 +1,22 @@
+server:
+  port: 333
+spring:
+  cloud:
+    stream:
+      function:
+        definition: process;subscribe;publish
+      bindings:
+        publish-out-0:
+          destination: publisher_channel
+        subscribe-in-0:
+          destination: subscriber_channel
+        process-in-0:
+          destination: publisher_channel
+        process-out-0:
+          destination: subscriber_channel
+
+  rabbitmq:
+    username: guest
+    password: guest
+    host: 127.0.0.1
+    port: 5672
